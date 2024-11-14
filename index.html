@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRIM DIAGRAMS</title>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      color: #000;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      filter: grayscale(100%);
+      background: url('grainy-texture.png') repeat;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 20px;
+      font-size: 2em;
+      text-transform: uppercase;
+    }
+    nav {
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: .75em;
+      filter: drop-shadow(1px 1px 0 #000);
+    }
+    section {
+      margin: 20px;
+      padding: 20px;
+      background: url('grainy-texture.png') repeat;
+    }
+    .random-text {
+      font-size: 1.5em;
+      margin: 10px 0;
+      filter: contrast(3);
+      transform: skewX(-5deg);
+    }
+    .image-collage {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .image-collage img {
+      margin: 10px;
+      width: 200px;
+      height: auto;
+      filter: contrast(1.2) brightness(0.7) grayscale(100%);
+      transform: rotate(-2deg);
+    }
+    p {
+      filter: drop-shadow(1px 1px 0 #fff) contrast(2);
+    }
+    .button {
+      padding: 10px 20px;
+      margin: 20px 0;
+      background: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      filter: drop-shadow(2px 2px 0 #fff) contrast(1.5);
+    }
+    .button:hover {
+      background: #fff;
+      color: #000;
+    }
+    footer { padding: 20px; }
+    footer nav ul { list-style: none; padding: 0; }
+    footer nav ul li { display: inline; margin: 0 15px; }
+    footer nav ul li a { color: #000; text-decoration: none; font-size: 1.2em; filter: drop-shadow(1px 1px 1px #fff); font-weight: bold; }
+  </style>
+</head>
+<body>
+<header>
+  GRIM DIAGRAMS
+  <nav>
+    <ul>
+      <li><a href="https://grimdiagrams.bandcamp.com/" target="_blank">Bandcamp</a></li>
+      <li><a href="https://www.youtube.com/@grimdiagrams" target="_blank">YouTube</a></li>
+    </ul>
+  </nav>
+</header>
+<section>
+  <div class="random-text">It appears soon.</div>
+  <div class="image-collage">
+    <img src="bury_me_loose.png" alt="BURY ME LOOSE">
+  </div>
+</section>
+<footer>
+  <nav>
+    <ul>
+      <li><a href="mailto:band@grimdiagrams.com">EMAIL</a></li>
+    </ul>
+  </nav>
+</footer>
+</body>
+</html>
