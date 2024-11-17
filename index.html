@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Fjalla+One&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GRIM DIAGRAMS</title>
   <style>
     body {
-      background-color: #fff;
-      font-family: 'Courier New', Courier, monospace;
+      font-family: "Fjalla One", serif;
+      font-weight: 400;
+      font-style: normal;
       color: #000;
       text-align: center;
       margin: 0;
       padding: 0;
       filter: grayscale(100%);
-      background: url('grainy-texture.png') repeat;
+      background: #fff url('grainy-texture.png') repeat;
     }
     header {
+      font-family: "Bowlby One", serif;
+      font-weight: 400;
+      font-style: normal;
       background: #000;
       color: #fff;
       padding: 20px;
@@ -37,7 +44,6 @@
       color: #fff;
       text-decoration: none;
       font-size: .75em;
-      filter: drop-shadow(1px 1px 0 #000);
     }
     section {
       margin: 20px;
@@ -72,7 +78,6 @@
       color: #fff;
       border: none;
       cursor: pointer;
-      filter: drop-shadow(2px 2px 0 #fff) contrast(1.5);
     }
     .button:hover {
       background: #fff;
@@ -81,7 +86,7 @@
     footer { padding: 20px; }
     footer nav ul { list-style: none; padding: 0; }
     footer nav ul li { display: inline; margin: 0 15px; }
-    footer nav ul li a { color: #000; text-decoration: none; font-size: 1.2em; filter: drop-shadow(1px 1px 1px #fff); font-weight: bold; }
+    footer nav ul li a { color: #000; text-decoration: none; font-size: 1.2em;}
   </style>
 </head>
 <body>
@@ -91,6 +96,7 @@
     <ul>
       <li><a href="https://grimdiagrams.bandcamp.com/" target="_blank">Bandcamp</a></li>
       <li><a href="https://www.youtube.com/@grimdiagrams" target="_blank">YouTube</a></li>
+      <li><a href="mailto:band@grimdiagrams.com">EMAIL</a></li>
     </ul>
   </nav>
 </header>
@@ -103,7 +109,7 @@
 <footer>
   <nav>
     <ul>
-      <li><a href="mailto:band@grimdiagrams.com">EMAIL</a></li>
+
     </ul>
   </nav>
 </footer>
