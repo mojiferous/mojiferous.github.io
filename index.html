@@ -87,6 +87,31 @@
     footer nav ul { list-style: none; padding: 0; }
     footer nav ul li { display: inline; margin: 0 15px; }
     footer nav ul li a { color: #000; text-decoration: none; font-size: 1.2em;}
+
+    /* Streaming flex-box*/
+    .streaming {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+      align-items: center;
+    }
+    /* Streaming service 50% width flex */
+    .stream-service {
+      flex-grow: 2;
+      flex-basis: 40%;
+      flex-shrink: 1;
+    }
+    @media only screen and (max-width: 768px) {
+      .stream-service {
+        flex-basis: 100%;
+      }
+    }
+    .fill-box {
+      background: #FFF;
+      border-radius: 10px;
+      padding: 20px 0;
+      margin: 10px;
+    }
   </style>
 </head>
 <body>
@@ -101,10 +126,25 @@
   </nav>
 </header>
 <section>
-  <div class="random-text">It appears soon.</div>
+  <div class="random-text">BURY ME LOOSE. Available now</div>
   <div class="image-collage">
     <img src="bury_me_loose.png" alt="BURY ME LOOSE">
   </div>
+  <div class="streaming">
+    <div class="stream-service">
+      <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/artist/grim-diagrams/1781093731"></iframe>
+    </div>
+    <div class="stream-service">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5HQU7ibeYb2d9KuvXK1igP?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <div class="stream-service">
+      <iframe id='AmazonMusicEmbedB0DNRGGXFJ' src='https://music.amazon.com/embed/B0DNRGGXFJ/?id=SOx7nFzLvN&marketplaceId=ATVPDKIKX0DER&musicTerritory=US' width='100%' height='352px' frameBorder='0' style='border-radius:20px;max-width:'></iframe>
+    </div>
+    <div class="stream-service fill-box">
+      <a href="https://music.youtube.com/channel/UCd83w8ncY7oUjZP1dLPw70Q?si=oseJWaUe6Oi56wuT">YouTube Music</a>
+    </div>
+  </div>
+
 </section>
 <footer>
   <nav>
