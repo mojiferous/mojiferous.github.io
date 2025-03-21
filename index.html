@@ -12,7 +12,7 @@
       font-family: "Fjalla One", serif;
       font-weight: 400;
       font-style: normal;
-      color: #000;
+      color: #FFF;
       text-align: center;
       margin: 0;
       padding: 0;
@@ -49,6 +49,7 @@
       margin: 20px;
       padding: 20px;
       background: url('grainy-texture.png') repeat;
+      align-items: center;
     }
     .random-text {
       font-size: 1.5em;
@@ -65,7 +66,6 @@
       margin: 10px;
       width: 200px;
       height: auto;
-      filter: contrast(1.2) brightness(0.7) grayscale(100%);
       transform: rotate(-2deg);
     }
     p {
@@ -90,29 +90,50 @@
 
     /* Streaming flex-box*/
     .streaming {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-around;
       align-items: center;
     }
     /* Streaming service 50% width flex */
     .stream-service {
-      flex-grow: 2;
-      flex-basis: 40%;
-      flex-shrink: 1;
+      max-width: 680px;
+      margin: auto;
     }
-    @media only screen and (max-width: 768px) {
-      .stream-service {
-        flex-basis: 100%;
-      }
+    .stream-label {
+      padding: 10px;
+      font-size: 2.5em;
+      text-shadow: 4px 4px #000;
+      cursor: pointer;
+    }
+    .stream-label:after {
+      content: '...';
+      font-size: .5em;
+      vertical-align: middle;
+      height: 35px;
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .stream-content {
+      display: none;
     }
     .fill-box {
       background: #FFF;
       border-radius: 10px;
       padding: 20px 0;
-      margin: 10px;
     }
   </style>
+  <script>
+    window.onload = function() {
+      document.querySelectorAll('.stream-service').forEach(function(service) {
+        service.addEventListener('click', function() {
+          // If the service is already open, close it.
+          if (this.querySelector('.stream-content').style.display === 'block') {
+            this.querySelector('.stream-content').style.display = 'none';
+            return;
+          }
+          this.querySelector('.stream-content').style.display = 'block';
+        });
+      });
+    }
+  </script>
 </head>
 <body>
 <header>
@@ -132,16 +153,28 @@
   </div>
   <div class="streaming">
     <div class="stream-service">
-      <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/artist/grim-diagrams/1781093731"></iframe>
+      <div class="stream-label">Apple Music</div>
+      <div class="stream-content">
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/artist/grim-diagrams/1781093731"></iframe>
+      </div>
     </div>
     <div class="stream-service">
-      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/5HQU7ibeYb2d9KuvXK1igP?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <div class="stream-label">Spotify</div>
+      <div class="stream-content">
+        <iframe style="border-radius:12px;" src="https://open.spotify.com/embed/artist/5HQU7ibeYb2d9KuvXK1igP?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
     </div>
     <div class="stream-service">
-      <iframe id='AmazonMusicEmbedB0DNRGGXFJ' src='https://music.amazon.com/embed/B0DNRGGXFJ/?id=SOx7nFzLvN&marketplaceId=ATVPDKIKX0DER&musicTerritory=US' width='100%' height='352px' frameBorder='0' style='border-radius:20px;max-width:'></iframe>
+      <div class="stream-label">Amazon Music</div>
+      <div class="stream-content">
+        <iframe id='AmazonMusicEmbedB0DNRGGXFJ' src='https://music.amazon.com/embed/B0DNRGGXFJ/?id=SOx7nFzLvN&marketplaceId=ATVPDKIKX0DER&musicTerritory=US' width='100%' height='352px' frameBorder='0' style='border-radius:20px;'></iframe>
+      </div>
     </div>
-    <div class="stream-service fill-box">
-      <a href="https://music.youtube.com/channel/UCd83w8ncY7oUjZP1dLPw70Q?si=oseJWaUe6Oi56wuT">YouTube Music</a>
+    <div class="stream-service">
+      <div class="stream-label">More Streaming Services</div>
+      <div class="stream-content fill-box">
+        <a href="https://music.youtube.com/channel/UCd83w8ncY7oUjZP1dLPw70Q?si=oseJWaUe6Oi56wuT">YouTube Music</a>
+      </div>
     </div>
   </div>
 
